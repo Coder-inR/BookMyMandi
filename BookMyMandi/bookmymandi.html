@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyMandi</title>
+  <style> 
+    p { 
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 800;
+      font-size: 37px;
+    }
+
+    button { 
+      font-family: sans-serif;
+      font-weight: bold;
+      font-size: 37px;
+      margin-top: 5px;
+      margin-right: 100px;
+      margin-bottom: 15px;
+      border-radius: 12px;
+      padding: 20px;
+      background-color: rgb(0, 0, 0);
+      color: rgb(72, 2, 236);
+      width: 550px;
+    }
+
+    button:hover { 
+      background-color: cyan;
+      box-shadow: 14px 26px 12px rgba(0, 0, 0, 0.2); 
+      
+      transform: translate(25px);
+    }
+    .reset:active { 
+      background-color: rgb(255, 4, 38);
+      box-shadow: 14px 26px 12px cyan; 
+      
+      transform: translate(-28px);
+    }
+  </style> 
+</head>
+<body>
+  <button class="half" onclick="half()"> 
+    Mandi Half
+  </button>
+  <button class="quarter" onclick="quarter()"> 
+    Mandi Quarter
+  </button>
+  <button class="full" onclick="full()"> 
+    Mandi Full
+  </button>
+  <button class="reset" onclick="reset()"> 
+    RESET
+  </button>
+  <p class="displayCost"> 
+    Checkout Bill: 0
+  </p>
+  <script> 
+  let total = 0
+
+
+    
+  function reset() { 
+    total = 0;
+    document.querySelector(".displayCost").innerHTML = `Checkout Bill: ₹${total}`;
+    }
+
+  function half() { 
+    ask = prompt("Confirm Mandi Half as Your order? Yes[Y]/No[N]").toLowerCase()
+    if (ask === 'y' || ask === 'yes') { 
+      let price = 440;
+      total += price;
+      document.querySelector(".displayCost").innerHTML = `Checkout Bill: ₹${total}`;
+    }
+    
+    else { 
+      document.querySelector(".displayCost").innerHTML = `Product Not Confirmed Properly!   ~CheckOUT BILL:  ₹${total}`;
+
+    }
+  }
+
+
+  function full() { 
+    ask = prompt("Confirm Mandi full as Your order? Yes[Y]/No[N]").toLowerCase()
+    if (ask === 'y' || ask === 'yes') { 
+      let price = 850;
+      total += price;
+      document.querySelector(".displayCost").innerHTML = `Checkout Bill: ₹${total}`;
+    }
+    
+    else { 
+      document.querySelector(".displayCost").innerHTML = `Product Not Confirmed Properly!   ~CheckOUT BILL:  ₹${total}`;
+
+    }
+  }
+
+  function quarter() { 
+    ask = prompt("Confirm Mandi quarter as Your order? Yes[Y]/No[N]").toLowerCase()
+    if (ask === 'y' || ask === 'yes') { 
+      let price = 227;
+      total += price;
+      document.querySelector(".displayCost").innerHTML = `Checkout Bill: ₹${total}`;
+    }
+    
+    else { 
+      document.querySelector(".displayCost").innerHTML = `Product Not Confirmed Properly!   ~CheckOUT BILL:  ₹${total}`;
+
+    }
+  }
+
+
+  
+
+
+
+  </script>
+</body>
+</html>
